@@ -3,13 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .target{background-color: #ffaa99}
+    </style>
 </head>
 <body>
   <ul>
 <!--    <li th:each="dto : ${list}">-->
-<!--      [[${dto }]]-->
-<!--    </li>-->
-        <li th:each="dto, state : ${list}" th:text="${dto.sno % 5 == 0}?${dto.sno} : ${dto.first}"></li>
+<!--      [[${dto}]]-->
+<!--    </li> 기본출력-->
+<!--        <li th:each="dto, state : ${list}" th:text="${dto.sno % 5 == 0}?${dto.sno} : ${dto.first}"></li> 조건문 -->
+<!--      <li th:each="dto:${list}" th:class="${dto.sno % 2 == 0} ? 'target'" th:text="${dto}"></li>-->
+        <th:block th:each="dto: ${list}"> <!--기본형태 th: block, 내용물 each(반복) dto를 list로-->
+            <li th:text="${dto.sno % 5 == 0}? ${dto.sno} : ${dto.first}"></li>
+        </th:block>
   </ul>
+
 </body>
 </html>

@@ -5,8 +5,11 @@
     <title>Title</title>
 </head>
 <body>
-<!--여기는 View-->
-    <h1 th:text="${'Hello World'}"></h1>
-    <h1>Thymeleaf 를 사용하는 첫번째 예시</h1>
+  <ul>
+    <li th:each="dto : ${list}">
+      <a th:href="@{/sample/exView(sno=${dto.sno})}">[[${dto}]]</a>
+    </li>
+  </ul>
+
 </body>
 </html>

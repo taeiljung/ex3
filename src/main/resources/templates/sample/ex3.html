@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h1 th:text="${result}"></h1>
+  <h1 th:text="${dto}"></h1>
+
+
+  <script th:inline="javascript"> // exInline에서 result와 dto를 받아와 msg, dto 변수에 넣고, 출력함.
+    console.log(${inline})
+    var msg = [[${result}]]
+    var dto = [[${dto}]]
+  </script>
+</body>
+</html>

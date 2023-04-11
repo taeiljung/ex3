@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 
 @Data
 @Builder(toBuilder = true)
+//DATA TRANSMISSION OBJECT , DTO, 데이터 전송체
 
 public class SampleDTO {
     private Long sno;
