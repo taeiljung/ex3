@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.Thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<h1 th:replace="~{/fragments/fragment1 :: part1}"></h1> exLayout1 에서 이 코드를 통해 replace됨. component처럼 사용되는 듯-->
+  <div th:fragment="part1">
+    <h2>Part 1 of fragment.part1</h2>
+  </div>
+  <div th:fragment="part2">
+    <h2>Part 2</h2>
+  </div>
+  <div th:fragment="part3">
+    <h2>Part 3</h2>
+  </div>
+</body>
+</html>

@@ -16,7 +16,7 @@ import java.util.stream.IntStream;
 //여기는 CONTROLLER
 
 @Controller // 어노테이션을 해줘야 이곳이 controller라는 의미
-@RequestMapping("/sample")// 요청하는 가상 directory
+@RequestMapping({"/sample"})// 요청하는 가상 directory
 @Log4j2 //롬복의 기능. 스프링부트가 로그라이브러리중에 log4j2를 기본으로 사용하고있음.
 public class SampleController {
     @GetMapping("/ex1") //가상디렉토리 지정. requestMapping의 주소를 받아와 하위디렉토리를 호출
@@ -24,7 +24,7 @@ public class SampleController {
     public void ex1(){
         log.info("ex1.............");
     }
-    @GetMapping({"/ex2","/exLink"})
+    @GetMapping({"/ex2","/exLink","/exFormat","fragment"}) // 매핑을 다양하게하면, 어떤 곳에서도 exModel이 똑같이 호출됨.
     //localhost:8080/sample/ex2 ...
     public void exModel(Model model){
         List<SampleDTO> list = IntStream.rangeClosed(1,20).asLongStream().mapToObj(i->{ //29번줄이 38번줄에서 사용됨.
@@ -57,5 +57,8 @@ public class SampleController {
     public void ex3(){
         log.info("ex가 호출되었음.");
     }
-
+    @GetMapping({"/exLayout1","/exLayout2","/exTemplate"})
+    public void exLayout1(){
+        log.info("exLayout1 .......called");
+    }
 }

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.Thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <ul>
+    <li th:each="dto : ${list}">
+      [[${#numbers.formatInteger(dto.sno,3)}]]  ------- [[${#temporals.format(dto.regTime, 'yyyy/MM/dd hh:mm a')}]]
+    </li>
+  </ul>
+
+</body>
+</html>
